@@ -149,6 +149,10 @@ module Guard
         len = step_mother.steps(status).length
         dump_count(len, "step", status.to_s)
       end
+      
+      def dump_count(count, what, state=nil)
+        [count, state, "#{what}#{count == 1 ? '' : 's'}"].compact.join(" ")
+      end
     end
 
     def dump_count(count, what, state=nil)
